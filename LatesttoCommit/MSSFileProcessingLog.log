@@ -1,0 +1,279 @@
+2021-01-28 10:39:33.165  INFO 1060 --- [main] com.bankfab.fabepay.FabePayMSSBatch      : Starting FabePayMSSBatch v0.0.1-SNAPSHOT on Ashok with PID 1060 (F:\microservices\etl\LatesttoCommit\FabePayMSSBatch-0.0.1-SNAPSHOT.jar started by ervip in F:\microservices\etl\LatesttoCommit)
+2021-01-28 10:39:33.168 DEBUG 1060 --- [main] com.bankfab.fabepay.FabePayMSSBatch      : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-28 10:39:33.168  INFO 1060 --- [main] com.bankfab.fabepay.FabePayMSSBatch      : No active profile set, falling back to default profiles: default
+2021-01-28 10:39:34.969  INFO 1060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 10:39:34.970  INFO 1060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-01-28 10:39:35.043  INFO 1060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 10:39:35.474  INFO 1060 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-28 10:39:35.586  INFO 1060 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-01-28 10:39:35.729  INFO 1060 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-28 10:39:35.857  INFO 1060 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-01-28 10:39:37.039 ERROR 1060 --- [main] com.zaxxer.hikari.pool.HikariPool        : SpringBootJPAHikariCP - Exception during pool initialization.
+
+java.sql.SQLRecoverableException: Listener refused the connection with the following error:
+ORA-12514, TNS:listener does not currently know of service requested in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:854) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:793) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:57) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:747) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:562) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.0.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.0.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.0.jar!/:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.0.jar!/:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109) ~[spring-context-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at com.bankfab.fabepay.FabePayMSSBatch.main(FabePayMSSBatch.java:14) ~[classes!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[FabePayMSSBatch-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:107) ~[FabePayMSSBatch-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[FabePayMSSBatch-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[FabePayMSSBatch-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12514, TNS:listener does not currently know of service requested in connect descriptor
+ 
+	at oracle.net.ns.NSProtocolNIO.negotiateConnection(NSProtocolNIO.java:284) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:340) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1596) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:588) ~[ojdbc8-19.3.0.0.jar!/:19.3.0.0.0]
+	... 59 common frames omitted
+
+2021-01-28 10:39:37.040  WARN 1060 --- [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata : Listener refused the connection with the following error:
+ORA-12514, TNS:listener does not currently know of service requested in connect descriptor
+ 
+2021-01-28 10:39:37.045  INFO 1060 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-01-28 10:39:37.058 ERROR 1060 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109) ~[spring-context-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.4.RELEASE.jar!/:2.3.4.RELEASE]
+	at com.bankfab.fabepay.FabePayMSSBatch.main(FabePayMSSBatch.java:14) ~[classes!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[FabePayMSSBatch-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:107) ~[FabePayMSSBatch-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[FabePayMSSBatch-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[FabePayMSSBatch-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790) ~[spring-beans-5.2.9.RELEASE.jar!/:5.2.9.RELEASE]
+	... 25 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.4.21.Final.jar!/:5.4.21.Final]
+	... 42 common frames omitted
+
+2021-01-28 10:47:25.480  INFO 12384 --- [main] com.bankfab.fabepay.FabePayMSSBatch      : Starting FabePayMSSBatch v0.0.1-SNAPSHOT on Ashok with PID 12384 (F:\microservices\etl\LatesttoCommit\FabePayMSSBatch-0.0.1-SNAPSHOT.jar started by ervip in F:\microservices\etl\LatesttoCommit)
+2021-01-28 10:47:25.483 DEBUG 12384 --- [main] com.bankfab.fabepay.FabePayMSSBatch      : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-28 10:47:25.484  INFO 12384 --- [main] com.bankfab.fabepay.FabePayMSSBatch      : No active profile set, falling back to default profiles: default
+2021-01-28 10:47:27.310  INFO 12384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 10:47:27.311  INFO 12384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-01-28 10:47:27.377  INFO 12384 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 10:47:27.732  INFO 12384 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-28 10:47:27.847  INFO 12384 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-01-28 10:47:28.103  INFO 12384 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-28 10:47:28.245  INFO 12384 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-01-28 10:47:28.827  INFO 12384 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-01-28 10:47:28.886  INFO 12384 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2021-01-28 10:48:56.874  INFO 12384 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-28 10:48:57.046  INFO 12384 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-28 10:48:57.048  INFO 12384 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-28 10:48:57.124  INFO 12384 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-28 10:48:58.237  INFO 12384 --- [main] com.bankfab.fabepay.FabePayMSSBatch      : Started FabePayMSSBatch in 93.272 seconds (JVM running for 93.745)
+2021-01-28 10:49:35.343  INFO 12384 --- [http-nio-9093-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 10:49:35.401 DEBUG 12384 --- [http-nio-9093-exec-1] c.b.fabepay.controller.LoadController    : **************Accepting the file F://microservices//CsvFileRepository//MssFileProcessing102.csvFor Processing
+2021-01-28 10:49:35.533 DEBUG 12384 --- [http-nio-9093-exec-1] c.b.f.configuration.SpringBatchConfig    :  Item Reader Started for F://microservices//CsvFileRepository//MssFileProcessing102.csv
+2021-01-28 10:49:41.385 DEBUG 12384 --- [http-nio-9093-exec-1] c.b.fabepay.controller.LoadController    : datasouce vALIDATIONQueryjdbc:oracle:thin:@//127.0.0.1:1521/ORCL
+2021-01-28 10:49:41.385 DEBUG 12384 --- [http-nio-9093-exec-1] c.b.fabepay.controller.LoadController    : datasouce autocommittrue
+2021-01-28 10:49:41.387 DEBUG 12384 --- [http-nio-9093-exec-1] c.b.fabepay.controller.LoadController    : datasouce GETIDLEnull
+2021-01-28 10:49:41.393 DEBUG 12384 --- [http-nio-9093-exec-1] c.b.fabepay.controller.LoadController    : datasouce getMax20
+2021-01-28 10:49:41.394 DEBUG 12384 --- [http-nio-9093-exec-1] c.b.fabepay.controller.LoadController    : datasouce getMin2000000 true
+2021-01-28 10:49:41.394 DEBUG 12384 --- [http-nio-9093-exec-1] c.b.fabepay.controller.LoadController    : ################ ##Successfully Submitted : F://microservices//CsvFileRepository//MssFileProcessing102.csv
+2021-01-28 10:49:41.416  INFO 12384 --- [http-nio-9093-exec-1] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    1060400 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    51127400 nanoseconds spent preparing 2000 JDBC statements;
+    742705200 nanoseconds spent executing 2000 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    953178800 nanoseconds spent executing 25 flushes (flushing a total of 31000 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-28 10:49:50.070 DEBUG 12384 --- [http-nio-9093-exec-2] c.b.fabepay.controller.LoadController    : **************Accepting the file F://microservices//CsvFileRepository//MssFileProcessing103.csvFor Processing
+2021-01-28 10:49:50.150 DEBUG 12384 --- [http-nio-9093-exec-2] c.b.f.configuration.SpringBatchConfig    :  Item Reader Started for F://microservices//CsvFileRepository//MssFileProcessing103.csv
+2021-01-28 10:49:54.386 DEBUG 12384 --- [http-nio-9093-exec-2] c.b.fabepay.controller.LoadController    : datasouce vALIDATIONQueryjdbc:oracle:thin:@//127.0.0.1:1521/ORCL
+2021-01-28 10:49:54.386 DEBUG 12384 --- [http-nio-9093-exec-2] c.b.fabepay.controller.LoadController    : datasouce autocommittrue
+2021-01-28 10:49:54.394 DEBUG 12384 --- [http-nio-9093-exec-2] c.b.fabepay.controller.LoadController    : datasouce GETIDLEnull
+2021-01-28 10:49:54.394 DEBUG 12384 --- [http-nio-9093-exec-2] c.b.fabepay.controller.LoadController    : datasouce getMax20
+2021-01-28 10:49:54.395 DEBUG 12384 --- [http-nio-9093-exec-2] c.b.fabepay.controller.LoadController    : datasouce getMin2000000 true
+2021-01-28 10:49:54.395 DEBUG 12384 --- [http-nio-9093-exec-2] c.b.fabepay.controller.LoadController    : ################ ##Successfully Submitted : F://microservices//CsvFileRepository//MssFileProcessing103.csv
+2021-01-28 10:49:54.399  INFO 12384 --- [http-nio-9093-exec-2] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    10459900 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    28285300 nanoseconds spent preparing 2000 JDBC statements;
+    394973900 nanoseconds spent executing 2000 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    505793300 nanoseconds spent executing 25 flushes (flushing a total of 31000 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-28 10:49:58.818 DEBUG 12384 --- [http-nio-9093-exec-3] c.b.fabepay.controller.LoadController    : **************Accepting the file F://microservices//CsvFileRepository//MssFileProcessing104.csvFor Processing
+2021-01-28 10:49:58.875 DEBUG 12384 --- [http-nio-9093-exec-3] c.b.f.configuration.SpringBatchConfig    :  Item Reader Started for F://microservices//CsvFileRepository//MssFileProcessing104.csv
+2021-01-28 10:50:01.370 DEBUG 12384 --- [http-nio-9093-exec-3] c.b.fabepay.controller.LoadController    : datasouce vALIDATIONQueryjdbc:oracle:thin:@//127.0.0.1:1521/ORCL
+2021-01-28 10:50:01.370 DEBUG 12384 --- [http-nio-9093-exec-3] c.b.fabepay.controller.LoadController    : datasouce autocommittrue
+2021-01-28 10:50:01.370 DEBUG 12384 --- [http-nio-9093-exec-3] c.b.fabepay.controller.LoadController    : datasouce GETIDLEnull
+2021-01-28 10:50:01.371 DEBUG 12384 --- [http-nio-9093-exec-3] c.b.fabepay.controller.LoadController    : datasouce getMax20
+2021-01-28 10:50:01.371 DEBUG 12384 --- [http-nio-9093-exec-3] c.b.fabepay.controller.LoadController    : datasouce getMin2000000 true
+2021-01-28 10:50:01.371 DEBUG 12384 --- [http-nio-9093-exec-3] c.b.fabepay.controller.LoadController    : ################ ##Successfully Submitted : F://microservices//CsvFileRepository//MssFileProcessing104.csv
+2021-01-28 10:50:01.373  INFO 12384 --- [http-nio-9093-exec-3] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    3463800 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    39497900 nanoseconds spent preparing 2000 JDBC statements;
+    396660200 nanoseconds spent executing 2000 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    510387400 nanoseconds spent executing 25 flushes (flushing a total of 31000 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-28 10:50:05.660 DEBUG 12384 --- [http-nio-9093-exec-4] c.b.fabepay.controller.LoadController    : **************Accepting the file F://microservices//CsvFileRepository//MssFileProcessing105.csvFor Processing
+2021-01-28 10:50:05.693 DEBUG 12384 --- [http-nio-9093-exec-4] c.b.f.configuration.SpringBatchConfig    :  Item Reader Started for F://microservices//CsvFileRepository//MssFileProcessing105.csv
+2021-01-28 10:50:05.731 DEBUG 12384 --- [http-nio-9093-exec-4] c.b.fabepay.controller.LoadController    : datasouce vALIDATIONQueryjdbc:oracle:thin:@//127.0.0.1:1521/ORCL
+2021-01-28 10:50:05.732 DEBUG 12384 --- [http-nio-9093-exec-4] c.b.fabepay.controller.LoadController    : datasouce autocommittrue
+2021-01-28 10:50:05.732 DEBUG 12384 --- [http-nio-9093-exec-4] c.b.fabepay.controller.LoadController    : datasouce GETIDLEnull
+2021-01-28 10:50:05.732 DEBUG 12384 --- [http-nio-9093-exec-4] c.b.fabepay.controller.LoadController    : datasouce getMax20
+2021-01-28 10:50:05.732 DEBUG 12384 --- [http-nio-9093-exec-4] c.b.fabepay.controller.LoadController    : datasouce getMin2000000 true
+2021-01-28 10:50:05.732 DEBUG 12384 --- [http-nio-9093-exec-4] c.b.fabepay.controller.LoadController    : ################ ##Successfully Submitted : F://microservices//CsvFileRepository//MssFileProcessing105.csv
+2021-01-28 10:50:05.734  INFO 12384 --- [http-nio-9093-exec-4] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    8178800 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    11000 nanoseconds spent preparing 1 JDBC statements;
+    1113900 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    1400000 nanoseconds spent executing 5 flushes (flushing a total of 5 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-28 10:54:03.024  INFO 12384 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-01-28 10:54:03.030  INFO 12384 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
